@@ -385,7 +385,7 @@ data_power_prod_ts |>
   summarise(n = n())
 ```
 
-This means that there 6 data gaps with \$75 - 15 / 15 = \`r 75 - 15 / 15\`\$ missing rows per data gap.
+This means that there are 6 data gaps with \$75 - 15 / 15 = `r 75 - 15 / 15`$ missing rows per data gap.
 
 ```{r}
 data_power_prod_ts <- data_power_prod_ts |> 
@@ -475,7 +475,7 @@ data_power_prod_ts_long |>
 
 ```{r}
 data_power_prod_ts_long |>
-  mutate(weekday = lubridate::wday(date, label = TRUE, abbr = TRUE)) |> mutate(weekday = as_factor())
+  mutate(weekday = lubridate::wday(date, label = TRUE, abbr = TRUE)) |>
   group_by(weekday, name) |>
   summarise(value = mean(value, na.rm = TRUE)) |> 
   # ungroup() |> distinct(name) |> pull(name)
